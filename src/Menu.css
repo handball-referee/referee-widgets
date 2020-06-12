@@ -1,0 +1,61 @@
+nav.hbwMenu {
+  --menu-item-bg-color-active: var(--blue3);
+  --menu-item-bg-color-hover: var(--blue2);
+  --menu-item-font-color: var(--white);
+}
+
+nav.hbwMenu {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  flex: 0 0 3.5rem;
+
+  @media (max-width: 48rem) {
+    flex-direction: row;
+  }
+
+  & a {
+    color: var(--menu-item-font-color);
+    padding: 0.625rem 0;
+    white-space:nowrap;
+    overflow: hidden;
+    flex: 0 0 1rem;
+
+    &.active {
+      background-color: var(--menu-item-bg-color-active);
+    }
+
+    &:hover {
+      background-color: var(--menu-item-bg-color-hover);
+    }
+
+    @media (max-width: 48rem) {
+      padding: 0 0.625rem;
+      flex-basis: 2.5rem;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  & .icon {
+    width: 3.5rem;
+    text-align: center;
+    display: inline-block;
+
+    @media (max-width: 48rem) {
+      width: 2.5rem;
+    }
+  }
+
+  & .text {
+    display: inline-block;
+
+    @media (max-width: 48rem) {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+}

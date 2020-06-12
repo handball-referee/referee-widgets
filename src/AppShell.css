@@ -1,0 +1,102 @@
+.hbwPageWrapper {
+  --page-bg-color: #f2f1f3;
+  --page-header-bg-color: var(--blue1);
+  --page-header-font-color: var(--white);
+  --menu-bg-color: var(--darkblue1);
+  --menu-font-color: var(--white);
+}
+
+.hbwPageWrapper {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: var(--page-bg-color);
+
+  @media (max-width: 48rem) {
+    flex-direction: column-reverse;
+  }
+}
+
+.hbwSpacer {
+  flex-grow: 1;
+
+  @media (max-width: 48rem) {
+    display: none;
+  }
+}
+
+.hbwPageMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--menu-bg-color);
+  width: 3.5rem;
+  min-width: 3.5rem;
+  transition: min-width 400ms;
+  box-shadow: var(--shadow);
+
+  &.open {
+    min-width: 12rem;
+  }
+
+  @media (max-width: 48rem) {
+    width: 100%;
+    flex-direction: row;
+    flex: 0 0 3.5rem;
+  }
+}
+
+.hbwPageLogo {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: flex-end;
+  background-color: var(--page-header-bg-color);
+
+  & img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.hbwPageMenuFooter {
+  & button {
+    width: 3.5rem;
+    border: 0;
+    background-color: transparent;
+    color: var(--menu-font-color);
+    padding: 0.625rem 0;
+
+    & svg {
+      transition: 400ms;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    display: none;
+  }
+}
+
+.hbwPageBody {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+
+  & > header {
+    background-color: var(--page-header-bg-color);
+    display: flex;
+    flex: 0 0 3.5rem;
+    box-shadow: var(--shadow);
+
+    & h1 {
+      margin: 1rem;
+      color: var(--page-header-font-color);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      flex-grow: 1;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.hbwSelect {
+  --select-font-color: var(--black);
+  --select-bg-color: var(--grey1);
+  --select-border-color: var(--darkblue1);
+  --select-popup-color: var(--grey1);
+  --select-hover-color: var(--grey2);
+  --select-indicator-color: var(--darkblue1);
+  --select-item-select-color: var(--grey1);
+  --select-item-hover-color: var(--grey2);
+}
+
+/* different style in header */
+.hbwHeaderContent .hbwSelect {
+  --select-font-color: var(--white);
+  --select-bg-color: var(--darkblue2);
+  --select-border-color: var(--darkblue1);
+  --select-popup-color: var(--darkblue1);
+  --select-hover-color: var(--darkblue1);
+  --select-indicator-color: var(--blue3);
+  --select-item-select-color: var(--darkblue1);
+  --select-item-hover-color: var(--blue2);
+}
+
+.hbwSelect {
+  display: flex;
+  position: relative;
+  margin: 0.75rem;
+  color: var(--select-font-color);
+  width: 10rem;
+  height: 2rem;
+  background-color: var(--select-bg-color);
+  border-radius: 0.5rem;
+  border: 1px solid var(--select-border-color);
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    & .hbwSelectPopup {
+      display: block;
+    }
+  }
+
+  &:hover {
+    background-color: var(--select-hover-color);
+  }
+
+  @media (max-width: 48rem) {
+    width: 4.25rem;
+  }
+}
+
+.hbwSelectContent {
+  flex-grow: 1;
+
+  @media (max-width: 48rem) {
+    & img {
+      margin-right: 0;
+    }
+
+    & span {
+      display: none;
+    }
+  }
+}
+
+.hbwSelectIndicator {
+  display: flex;
+  font-size: 1.5rem;
+  width: 1rem;
+  margin: 0 0.5rem;
+  color: var(--select-indicator-color);
+
+  & svg {
+    display: block;
+    height: 1.875rem;
+  }
+}
+
+.hbwSelectPopup {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  border: 1px solid var(--select-border-color);
+  background-color: var(--select-popup-color);
+  margin-top: -2px;
+  margin-right: -1px;
+  padding: 0;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  min-width: 100%;
+  list-style: none;
+  z-index: 5;
+
+  & li {
+    &[aria-selected=true] {
+      background-color: var(--select-item-select-color);
+    }
+
+    &:hover {
+      border-radius: 0.25rem;
+      background-color: var(--select-item-hover-color);
+    }
+  }
+}
+
+.hbwSelectPopup img, .hbwSelectContent img {
+  height: 1.325rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.hbwSelectPopup li, .hbwSelectContent {
+  padding: 0.25rem;
+  line-height: 1.375rem;
+  display: flex;
+  align-content: center;
+}

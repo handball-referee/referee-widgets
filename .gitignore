@@ -1,0 +1,7 @@
+.idea
+.vscode
+
+lib
+module
+node_modules
+types

@@ -1,0 +1,43 @@
+.hbwCheckbox {
+  --checkbox-bg-color: var(--white);
+  --checkbox-bg-color-checked: var(--darkblue2);
+  --checkbox-bg-color-hover: var(--blue2);
+  --checkbox-border-color: var(--darkblue2);
+}
+
+.hbwCheckbox {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--checkbox-bg-color);
+  border: 0.1rem solid var(--checkbox-border-color);
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+
+  &[aria-checked=true] {
+    background-color: var(--checkbox-bg-color-checked);
+  }
+
+  &:hover {
+    background-color: var(--checkbox-bg-color-hover);
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      display: block;
+    }
+  }
+
+  & .checkmark {
+    display: none;
+    position: absolute;
+    color: var(--checkbox-bg-color);
+  }
+}
